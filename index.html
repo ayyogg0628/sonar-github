@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color: lavender;">
+
+<h1 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Calculator</h1>
+<script>
+    var flag=0;
+    function clr(parameter){
+        if(flag==1){
+            calculator.display.value = '';
+            calculator.display.value += parameter;
+            flag=0;
+        }
+        else if(flag==0){
+            calculator.display.value += parameter;
+        }
+    }
+    function clicked(){
+       calculator.display.value = eval(calculator.display.value);
+       flag=1;
+    }
+</script>
+<form name="calculator">
+   <table>
+      <tr>
+         <td colspan="4">
+            <input type="text" name="display" id="display" disabled>
+           
+         </td>
+      </tr>
+      <tr>
+            <td><input type="button" name="one" value="1" onclick="clr('1')"></td>
+            <td><input type="button" name="two" value="2" onclick="clr('2')"></td>
+            <td><input type="button" name="three" value="3" onclick="clr('3')"></td>
+            <td><input type="button" class="operator" name="plus" value="+" onclick="clr('+')"></td>
+     </tr>
+     <tr>
+            <td><input type="button" name="four" value="4" onclick="clr('4')"></td>
+            <td><input type="button" name="five" value="5" onclick="clr('5')"></td>
+            <td><input type="button" name="six" value="6" onclick="clr('6')"></td>
+            <td><input type="button" class="operator" name="minus" value="-" onclick="clr('-')"></td>
+     </tr>
+     <tr>
+            <td><input type="button" name="seven" value="7" onclick="clr('7')"></td>
+            <td><input type="button" name="eight" value="8" onclick="clr('8')"></td>
+            <td><input type="button" name="nine" value="9" onclick="clr('9')"></td>
+            <td><input type="button" class="operator" name="times" value="x" onclick="clr('*')"></td>
+     </tr>
+     <tr>
+            <td><input type="button" id="clear" name="clear" value="c" onclick="calculator.display.value = ''"></td>
+            <td><input type="button" name="zero" value="0" onclick="clr('0')"></td>
+            <td><input type="button" name="doit" value="=" onclick="clicked()"></td>
+            <td><input type="button" class="operator" name="div" value="/" onclick="clr('/')"></td>
+      </tr>
+      <tr>
+            <td><input type="button" name="dot" value="." onclick="clr('.')"></td>
+      </tr>
+   </table>
+</form>
+
+<style>
+h1{
+   text-align: left;
+   font-size: 40px;
+}
+
+table {
+  margin:auto;
+  background-color:rgb(116, 114, 114);
+  width: 200px;
+  max-width: 200px;
+  height: 400px;
+  text-align: center;
+  border-radius: 4px;
+  padding-right: 15px;
+}
+
+input {
+  outline: 0;
+  position: relative;
+  left: 5px;
+  top: 5px;
+  border: 0;
+  color:black;
+  background-color: #fff;
+  border-radius: 4px;
+  width: 60px;
+  height: 50px;
+  float: left;
+  margin: 5px;
+  font-size: 25px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px rgba(0,0,0,0.2);
+  margin-bottom: 15px;
+}
+
+input:active {
+  top: 4px;
+  border: 0 solid #000;
+  color: #495069;
+  background-color: #fff;
+  border-radius: 4px;
+  width: 60px;
+  height: 50px;
+  float: left;
+  margin: 5px;
+  font-size: 20px;
+  box-shadow: none;
+}
+
+#display {
+  width: 300px;
+  max-width: 300px;
+  font-size: 26px;
+  text-align: right;
+  background-color:lemonchiffon;
+  float: left;
+}
+
+.operator {
+  background-color: #cee9ea;
+  position: relative;
+}
+
+.operator:active {
+  top: 4px;
+  box-shadow: none;
+}
+
+#clear {
+  float: left;
+  position: relative;
+  display: block;
+  background-color: #ff9fa8;
+}
+
+#clear:active {
+  float: left;
+  top: 4px;
+  display: block;
+  background-color: #F297A0;
+  margin-bottom: 15px;
+  box-shadow: none;
+}
+
+</style>
+
+</body>
+</html>
+
